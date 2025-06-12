@@ -22,5 +22,5 @@
 module.exports = function () {
     // window.webkitRequestFileSystem and window.webkitResolveLocalFileSystemURL are available only in Chrome and
     // possibly a good flag to indicate that we're running in Chrome
-    return window.webkitRequestFileSystem && window.webkitResolveLocalFileSystemURL;
+    return (cordova.platformId === 'browser' && window.useIDBFileSystem) ? true : (window.webkitRequestFileSystem && window.webkitResolveLocalFileSystemURL);
 };
