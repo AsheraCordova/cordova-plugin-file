@@ -21,7 +21,7 @@
 
 (function () {
     /* global require */
-
+	require('./idbFilesystem');
     // Only Chrome uses this file.
     if (!require('./isChrome')()) {
         return;
