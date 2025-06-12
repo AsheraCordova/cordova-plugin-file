@@ -166,6 +166,28 @@ to config.xml in order for the application to find previously stored files.
         </js-module>
     </platform>
 
+
+	<platform name="swt">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="File" >
+                <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
+                <param name="onload" value="true" />
+            </feature>
+            <allow-navigation href="cdvfile:*" />
+        </config-file>
+
+        <source-file src="src/swt/EncodingException.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/FileExistsException.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/InvalidModificationException.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/NoModificationAllowedException.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/TypeMismatchException.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/FileUtils.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/DirectoryManager.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/LocalFilesystemURL.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/Filesystem.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/LocalFilesystem.java" target-dir="src/org/apache/cordova/file" />
+        <source-file src="src/swt/PendingRequests.java" target-dir="src/org/apache/cordova/file" />
+    </platform>
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
