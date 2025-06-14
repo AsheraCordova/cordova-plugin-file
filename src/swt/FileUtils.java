@@ -995,21 +995,8 @@ public class FileUtils extends CordovaPlugin {
     private JSONObject requestAllPaths() throws JSONException {
         Context context = cordova.getActivity();
         JSONObject ret = new JSONObject();
-//        ret.put("applicationDirectory", "file:///android_asset/");
-       // ret.put("applicationStorageDirectory", toDirUrl(context.getFilesDir().getParentFile()));
-//        ret.put("dataDirectory", toDirUrl(context.getFilesDir()));
+        ret.put("dataDirectory", System.getProperty("user.dir"));
         ret.put("cacheDirectory", toDirUrl(context.getCacheDir()));
-//        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-//            try {
-//                ret.put("externalApplicationStorageDirectory", toDirUrl(context.getExternalFilesDir(null).getParentFile()));
-//                ret.put("externalDataDirectory", toDirUrl(context.getExternalFilesDir(null)));
-//                //ret.put("externalCacheDirectory", toDirUrl(context.getExternalCacheDir()));
-//                ret.put("externalRootDirectory", toDirUrl(Environment.getExternalStorageDirectory()));
-//            } catch (NullPointerException e) {
-//                /* If external storage is unavailable, context.getExternal* returns null */
-//                LOG.d(LOG_TAG, "Unable to access these paths, most liklely due to USB storage");
-//            }
-//        }
         return ret;
     }
 
